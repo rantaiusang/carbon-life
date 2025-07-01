@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carbon Life</title>
-  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Life</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://sdk.minepi.com/pi-sdk.js"></script>
 </head>
+
 <body>
-  <h1>🌱 Carbon Life</h1>
-  <p id="login-status">🔐 Menunggu login...</p>
+    <div class="container">
+        <header class="header">
+            <h1>🌱 Carbon Life</h1>
+            <p>Hitung dan offset jejak karbon harian berdasarkan aktifitas pengguna</p>
+        </header>
 
-  <div id="form">
-    <label>
-      🚗 Km Motor:
-      <input type="number" id="kmMotor" value="0" />
-    </label>
-    <label>
-      🍗 Makan Daging:
-      <input type="checkbox" id="makanDaging" />
-    </label>
-    <label>
-      🔌 Listrik (kWh):
-      <input type="number" id="listrik" value="0" />
-    </label>
-    <button onclick="hitungEmisi()">🔥 Hitung Emisi CO₂</button>
-  </div>
+        <!-- Form Input -->
+        <section class="form-container">
+            <form id="carbon-form">
+                <label for="kmMotor">🚗 Km Motor:</label>
+                <input type="number" id="kmMotor" name="kmMotor" value="0">
 
-  <p id="hasil"></p>
-  <button id="offsetButton" style="display:none" onclick="bayarPi()">🌿 Offset Sekarang</button>
+                <label for="makanDaging">🍗 Makan Daging:</label>
+                <input type="checkbox" id="makanDaging" name="makanDaging">
 
-  <script src="script.js"></script>
-</body>
-</html>
+                <label for="listrik">🔌 Listrik (kWh):</label>
+                <input type="number" id="listrik" name="listrik" value="0">
+
+                <button type="submit" id="submitButton">🔥 Hitung Emisi CO₂</button>
+            </form>
+        </section>
+
+        <!-- Hasil Perhitungan -->
+        <section id="hasilSection" class="hasil-section">
+            <p id="hasil">🔥 Emisi Hari Ini: 0 kg CO₂</p>
+            <button id="offsetButton" style="display: none;">🌿 Offset Sekarang</button>
+        </section>
+    </div>
+
+    <script src="script.js"></sc
