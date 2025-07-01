@@ -1,16 +1,36 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Life</title>
+  <script src="https://sdk.minepi.com/pi-sdk.js"></script>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  Hello world
+  <h1>🌱 Carbon Life</h1>
+  <p id="login-status">🔐 Menunggu login...</p>
+
+  <div id="form">
+    <label>
+      🚗 Km Motor:
+      <input type="number" id="kmMotor" value="0" />
+    </label>
+    <label>
+      🍗 Makan Daging:
+      <input type="checkbox" id="makanDaging" />
+    </label>
+    <label>
+      🔌 Listrik (kWh):
+      <input type="number" id="listrik" value="0" />
+    </label>
+    <button onclick="hitungEmisi()">🔥 Hitung Emisi CO₂</button>
+  </div>
+
+  <p id="hasil"></p>
+  <button id="offsetButton" style="display:none" onclick="bayarPi()">🌿 Offset Sekarang</button>
+
   <script src="script.js"></script>
 </body>
-
 </html>
